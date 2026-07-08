@@ -18,6 +18,7 @@
 
 .num1{
   position: absolute;
+  top: 110px;
   left: 55px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -124,7 +125,7 @@ input[type="text"]{
 
 .result-display{
   position: absolute;
-  top: 140px;
+  top: 160px;
   left: 20px;
   width: 405px;
   padding-top: 10px;
