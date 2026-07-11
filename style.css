@@ -80,13 +80,21 @@
   margin-right: 20px;
 }
 
-.num1,
 .result-display{
   width:100%;
   padding:12px;
   border-radius:15px;
   border:none;
   font-size:16px;
+}
+
+.num1{
+  width:300px;
+  padding:12px;
+  border-radius:15px;
+  border:none;
+  font-size:16px;
+  border: none;
 }
 
 .num1::placeholder{
@@ -513,7 +521,7 @@ button:active{
   padding-bottom: 5px;
   padding-left: 8px;
   padding-right: 8px;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 .square-root{
