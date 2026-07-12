@@ -547,9 +547,9 @@ document.querySelector('.js-log2').addEventListener('click',()=>{
 
 
 function lnCalculation(){
-  let num = document.querySelector('.js-num1').value;
+  let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let numSplit = num.split(',');
+  let numSplit = firstNum.split(',');
 
   if(numSplit.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
