@@ -1,37 +1,30 @@
+//ADDITION FUNCTION
 function add(){
   let first_num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
   
   //separate the two numbers with a comma.
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
   let split_num = first_num.split(',');
 
-  //check if the user entered two numbers
+  //check if the user entered two numbers.
   if(split_num.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma:';
+    document.querySelector('.js-num1').value = 'Please Enter num1, num2';
     return;
   }
   
 
-  //convert the texts to actual numbers, save them in a variable and use trim to remove spcae
+  //convert the texts to actual numbers, save them in a variable and use trim to remove space.
   let num1 = parseFloat(split_num[0].trim());
   let num2 = parseFloat(split_num[1].trim());
 
-  //check if the numbers are valid
+  //check if the numbers are valid.
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter valid numbers';
+    document.querySelector('.js-num1').value = 'Please Enter valid num1, num2';
     return;
   }
   //sum the numers:
   let sum = num1 + num2;
-  document.querySelector('.js-result').value = `${sum}`;
-
-  //const second_num = document.querySelector('.js-num2');
-  //let first = first_num.value;
-  //let second = second_num.value;
-  //const total_value1 = Number(first);
-  //const total_value2 = Number(second);
-  //let total = total_value1 + total_value2;
+  document.querySelector('.js-num1').value = `${sum}`;
 }
 document.querySelector('.js-add-button').addEventListener('click', ()=>{
   add();
@@ -39,18 +32,18 @@ document.querySelector('.js-add-button').addEventListener('click', ()=>{
 
 
 
+//SUBTRACTION FUNCTION
 function subtract(){
   //collect the  string numbers:
   let first_num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
   //split the text num with a comma:
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
   let num_split = first_num.split(',');
 
   //check if the user entered two numbers:
   if(num_split.length !==2){
-    document.querySelector('.js-result').value = 'Please enter two numbers';
+    document.querySelector('.js-num1').value = 'Please Enter num1, num2';
     return;
   }
 
@@ -60,38 +53,32 @@ function subtract(){
 
   //check if the user entered two numbers
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter actual two numbers:';
+    document.querySelector('.js-num1').value = 'Please Enter valid num1, num2';
     return;
   }
 
   //subtract the two numbers:
   let sub = num1 - num2;
-  document.querySelector('.js-result').value = `${sub}`;
-
-  //const second_num = document.querySelector('.js-num2');
-  //let first = first_num.value;
-  //let second = second_num.value;
-  //const total_value1 = Number(first);
-  //const total_value2 = Number(second);
-  //let total = total_value1 - total_value2;
+  document.querySelector('.js-num1').value = `${sub}`;
 }
 document.querySelector('.js-sub-button').addEventListener('click', ()=>{
   subtract();
 });
 
 
+
+//DIVISION FUNCTION
 function divide(){
   //collect the  string numbers:
   let first_num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
   //split the text num with a comma:
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
   let num_split = first_num.split(',');
 
   //check if the user entered two numbers:
   if(num_split.length !==2){
-    document.querySelector('.js-result').value = 'Please enter two string numbers';
+    document.querySelector('.js-num1').value = 'Please Enter num1, num2';
     return;
   }
 
@@ -101,44 +88,45 @@ function divide(){
 
   //check if the user entered two numbers
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter actual two numbers:';
+    document.querySelector('.js-num1').value = 'Please Enter valid num1, num2';
     return;
   }
 
   //divide the two numbers:
-  let divide_num = (num1 / num2).toFixed(2);
+  let divide_num = (num1 / num2).toFixed(4);
   if(num2 === 0){
-    document.querySelector('.js-result').value = 'Error: Division by zero';
+    document.querySelector('.js-num1').value = 'Error: Division by zero';
     return;
-  }else{
-    document.querySelector('.js-result').value = `${divide_num}`;
+
+  }else if(num1 === 0){
+    divide_num = (num1 / num2).toFixed(0);
+    document.querySelector('.js-num1').value = `${divide_num}`;
+    return;
+
+  }else if(num1 !== num2){
+    const divide_num = (num1/num2 || num2/num1).toFixed(2);
+    document.querySelector('.js-num1').value = divide_num;
+    return;
   }
-  //const first_num = document.querySelector('.js-num1');
-  //const second_num = document.querySelector('.js-num2');
-  //let first = first_num.value;
-  //let second = second_num.value;
-  //const total_value1 = Number(first);
-  //const total_value2 = Number(second);
-  //let total = Math.round((total_value1 / total_value2) * 1000) / 1000;
-  //document.querySelector('.js-result').value = `${total}`;
 }
 document.querySelector('.js-divide-button').addEventListener('click', ()=>{
   divide();
 })
 
 
+
+//MULTIPLICATION FUNCTION
 function multiply(){
   //collect the  string numbers:
   let first_num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
   //split the text num with a comma:
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
   let num_split = first_num.split(',');
 
   //check if the user entered two numbers:
   if(num_split.length !==2){
-    document.querySelector('.js-result').value = 'Please enter two numbers';
+    document.querySelector('.js-num1').value = 'Please Enter num1, num2';
     return;
   }
 
@@ -148,365 +136,309 @@ function multiply(){
 
   //check if the user entered two numbers
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter actual two numbers:';
+    document.querySelector('.js-num1').value = 'Please Enter valid num1, num2';
     return;
   }
 
   //multiply the two numbers:
   let mult = num1 * num2;
-  document.querySelector('.js-result').value = `${mult}`;
-
-  //const first_num = document.querySelector('.js-num1');
-  //const second_num = document.querySelector('.js-num2');
-  //let first = first_num.value;
-  //let second = second_num.value;
-  //const total_value1 = Number(first);
-  //const total_value2 = Number(second);
-  //let total = total_value1 * total_value2
-  document.querySelector('.js-result').value = `${total}`;
+  document.querySelector('.js-num1').value = `${mult}`;
 }
 document.querySelector('.js-multiply').addEventListener('click', ()=>{
   multiply();
 });
 
 
-let resetValue = 0;
+
+//CLEAR INPUT FUNCTION
+let resetValue = '';
 function resetCalculator(){
   let first_reset= document.querySelector('.js-num1');
   first_reset.value = [];
   
   localStorage.setItem('resetValue', JSON.stringify(resetValue));
 
-  document.querySelector('.js-result').value = JSON.parse(localStorage.getItem('resetValue'));
+  document.querySelector('.js-num1').value = JSON.parse(localStorage.getItem('resetValue'));
 }
 document.querySelector('.js-reset').addEventListener('click', ()=>{
   resetCalculator();
 });
 
 
+
+//SIN FUNCTION
 function sinCalculation(){
   //collect the  string numbers:
   let first_num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
-  //split the text num with a comma:
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
-  let num_split = first_num.split(',');
 
-  //check if the user entered two numbers:
-  if(num_split.length !==2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma!';
+  const num = Number(first_num);
+  if(num){
+    const teta = num * (Math.PI/180);
+    const resultTeta = (Math.sin(teta)).toFixed(4);
+    document.querySelector('.js-num1').value = `${resultTeta} Radians`;
     return;
-  }
 
-  //convert the string numbers to actual numbers and use trim to remove spaces:
-  let degrees = parseFloat(num_split[0].trim());
-  let hypotenuse = parseFloat(num_split[1].trim());
-
-  //check if the user entered two numbers
-  if(isNaN(degrees) || isNaN(hypotenuse)){
-    document.querySelector('.js-result').value = 'Please enter actual one number:';
+  }else if(isNaN(num)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
-  }
 
-  //get the sin of the two numbers:
-  let sinTotal = degrees * Math.PI/180 ;
-  let sin0 = Math.sin(sinTotal).toFixed(4);
-  document.querySelector('.js-result').value = `${sin0} radians`;
+  }
 }
+
 document.querySelector('.js-sin').addEventListener('click', ()=>{
   sinCalculation();
 });
 
 
+
+//COS FUNCTION
 function cosCalculation(){
   //get the input values:
   let inputVal = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
-  //separate the two values with a comma:
-  //Initially, we have empty strings like this''; If you click button 1, we have '' + '1'; if you click button 2, we have '1' + '2' = 12, if you click button 3, we have '12' + '3', we have 123.
-  let inputValueSplit = inputVal.split(',');
+  const inputNum = Number(inputVal);
 
-  //check if the user enters two string values:
-  if(inputValueSplit.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated with a comma';
+  if(inputNum){
+    const teta = inputNum * (Math.PI/180);
+    const cosTotal = Math.cos(teta).toFixed(4);
+    document.querySelector('.js-num1').value = `${cosTotal} radians`;
+    return;
+
+  }else if(isNaN(inputNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
 
-  //convert the two string numbers to actual numbers:
-  let degrees = parseFloat(inputValueSplit[0].trim());
-  let hypotenuse = parseFloat(inputValueSplit[1].trim());
-
-  //check if the user enters valid numbers:
-  if(isNaN(degrees) || isNaN(hypotenuse)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers';
-    return;
-  }
-
-  //perform calculation:
-  let cosTotal = degrees * Math.PI/180;
-  let cos0 = Math.cos(cosTotal).toFixed(4);
-  document.querySelector('.js-result').value = `${cos0} radians`;
 }
 document.querySelector('.js-cos').addEventListener('click', ()=>{
   cosCalculation();
 });
 
 
+
+//TAN FUNCTION
 function tanCalculation(){
   //get the input values:
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
 
-  //split the two numbers:
-  let numSplit = firstNum.split(',');
+  const tanNum = Number(firstNum);
+  if(tanNum){
+    const teta = tanNum * (Math.PI/180);
+    const tetaTotalTan = Math.tan(teta).toFixed(4);
+    document.querySelector('.js-num1').value = `${tetaTotalTan} radians`;
+    return;
 
-  //check if the user enters two string numbers:
-  if(numSplit.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers';
+  }else if(isNaN(tanNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
 
-  //convert the string numbers to actual numbers:
-  let degrees = parseFloat(numSplit[0].trim());
-  let adjacent = parseFloat(numSplit[1].split());
-
-  //check if the user enters valid numbers:
-  if(isNaN(degrees) || isNaN(adjacent)){
-    document.querySelector('.js-result').value = 'Please enter valid numbers';
-    return;
-  }
-
-  //perform calculation:
-  let tanTotal = degrees * Math.PI/180;
-  let tan0 = Math.tan(tanTotal).toFixed(4);
-  document.querySelector('.js-result').value = `${tan0} radians`;
+  
 }
 document.querySelector('.js-tan').addEventListener('click',()=>{
   tanCalculation();
 });
 
 
+
+//SIN INVERSE FUNCTION
 function asinCalculation(){
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let splitNum = firstNum.split(',');
-  if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+
+  const myAsinNum = parseFloat(firstNum);
+  if(!isNaN(myAsinNum)){
+    const resultRadians = Math.asin(myAsinNum)
+    const resultDegrees = resultRadians * (180/Math.PI);
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} Degrees`;
+    return;
+
+  }else if(isNaN(myAsinNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
-
-  let radians = parseFloat(splitNum[0].trim());
-  let num2 = parseFloat(splitNum[1].trim());
-
-  if(isNaN(radians) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers';
-    return;
-  }
-
-  let asin0 = (Math.asin(radians) * 180/Math.PI).toFixed(0);
-  if(isNaN(asin0)){
-    document.querySelector('.js-result').value = "Error: can't perform an integer!parameters out of range";
-    return;
-  }else{
-    document.querySelector('.js-result').value = `${asin0} degrees`;
-  }
+  
 }
 document.querySelector('.js-asine').addEventListener('click', ()=>{
   asinCalculation();
 });
 
 
+
+//COS INVERSE FUNCTION
 function acosCalculation(){
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let splitNum = firstNum.split(',');
-  if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
-    return;
-  }
 
-  let radians = parseFloat(splitNum[0].trim());
-  let num2 = parseFloat(splitNum[1].trim());
-
-  if(isNaN(radians) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers';
-    return;
-  }
-
-  let acosTotal = radians;
-  let acos0 = (Math.acos(acosTotal) * 180/Math.PI).toFixed(0);
-  if(isNaN(acos0)){
-    document.querySelector('.js-result').value = "Error: can't perform an integer!parameters out of range";
+  const myCosNum = parseFloat(firstNum);
+  if(!isNaN(myCosNum)){
+    const resultRadians = Math.acos(myCosNum)
+    const resultDegrees = resultRadians * (180/Math.PI);
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} Degrees`;
     return;
 
-  }else{
-   document.querySelector('.js-result').value = `${acos0} degrees`;
+  }else if(isNaN(myCosNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
+    return;
   }
+  
 }
 document.querySelector('.js-acose').addEventListener('click', ()=>{
   acosCalculation();
 });
 
+
+
+//TAN INVERSE FUNCTION
 function atanCalculation(){
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let splitNum = firstNum.split(',');
-  if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+
+  const myAtanNum = parseFloat(firstNum);
+  if(!isNaN(myAtanNum)){
+    const resultRadians = Math.atan(myAtanNum)
+    const resultDegrees = resultRadians * (180/Math.PI);
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(2)} Degrees`;
+    return;
+
+  }else if(isNaN(myAtanNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
-
-  let radians = parseFloat(splitNum[0].trim());
-  let num2 = parseFloat(splitNum[1].trim());
-
-  if(isNaN(radians) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers';
-    return;
-  }
-
-  let atanTotal = radians;
-  let atan0 = (Math.atan(atanTotal) * 180/Math.PI).toFixed(0);
-  document.querySelector('.js-result').value = `${atan0} degrees`;
+  
 }
 document.querySelector('.js-atan').addEventListener('click', ()=>{
   atanCalculation();
 });
 
 
+
+//EXPONENTIAL FUNCTION
 function expCalculation(){
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let splitNum = firstNum.split(',');
-  if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+
+  const myExpNum = parseFloat(firstNum);
+  if(!isNaN(myExpNum)){
+    const resultExp = myExpNum.toExponential();
+    document.querySelector('.js-num1').value = resultExp;
+    return;
+
+  }else if(isNaN(myExpNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
 
-  let exponential = parseFloat(splitNum[0].trim());
-  let base = parseFloat(splitNum[1].trim());
-
-  if(isNaN(exponential) || isNaN(base)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers';
-    return;
-  }
-
-  let exp = exponential.toExponential();
-  document.querySelector('.js-result').value = `${exp}`;
 }
+
 document.querySelector('.js-exp').addEventListener('click',()=>{
   expCalculation();
 });
 
 
+
+
+//SQUARE ROOT FUNCTION
 function squareCalculation(){
   let firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
   let squareSplit = firstNum.split(',');
 
-  if(squareSplit.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
-   return;
+  //CONVERTING THE STRING TO ACTUAL NUMBER
+  const mySquareNum = parseFloat(firstNum);
+  if(!isNaN(mySquareNum)){
+    const resultSquare = Math.sqrt(mySquareNum);
+    document.querySelector('.js-num1').value = resultSquare;
+    return;
+
+    //CHECKING IF IT NOT A NUMBER
+  }else if(isNaN(mySquareNum)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
+    return;
   }
 
-  let num1 = parseFloat(squareSplit[0].trim());
-  let num2 = parseFloat(squareSplit[1].trim());
-
-  if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid nums separated by a comma';
-    return;
-  }
-
-  if(num2 === 0){
-    document.querySelector('.js-result').value = 'Error: Division by zero';
-    return;
-  }else if(num1 === num2){
-    let totalNum = Math.sqrt(num1);
-    document.querySelector('.js-result').value = `${totalNum}`;
-    return;
-  }else if(num1 !== num2){
-    let totalNum = Math.sqrt(num1/num2).toFixed(4);
-    document.querySelector('.js-result').value = `${totalNum}`;
-    return;
-  }
 }
+
 document.querySelector('.js-square').addEventListener('click', ()=>{
   squareCalculation();
 });
 
 
+
+//X RAISE TO POWER Y FUNCTION
 function xRaiseToPower(){
   let num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  //SPLIT THE NUMBERS INTO TWO
   let numSplit = num.split(',');
 
+
+  //CHECKING IF THE NUMBERS ENTERED IS LESS OR GREATER THAN TWO.
   if(numSplit.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+    document.querySelector('.js-num1').value = 'Please Enter base, power';
     return;
   }
 
+  //CONVERTING THE NUMBERS TO ACTUAL NUMBERS USING PARSEFLOAT(),THEN USE TRIM() TO REMOVE WHITE SPACE.
   let num1 = parseFloat(numSplit[0].trim());
   let num2 = parseFloat(numSplit[1].trim());
 
+  //CHECKING IF THE TWO NUMBERS ENTERED ARE REALLY REAL NUMBERS.
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter valid numbers';
+    document.querySelector('.js-num1').value = 'Please Enter valid base, power';
     return;
   }
 
   let raisePower = Math.pow(num1,num2);
-  document.querySelector('.js-result').value = `${raisePower}`;
+  document.querySelector('.js-num1').value = `${raisePower}`;
 }
 document.querySelector('.js-raise-power').addEventListener('click', ()=>{
   xRaiseToPower();
 });
 
 
+
+
+//LOG TO BASE TEN FUNCTION
 function logBaseTenCalculation(){
   let num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
-  let numSplit = num.split(',');
 
-  if(numSplit.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+  //CONVERT TO REAL NUMBERS
+  const myNum = parseFloat(num);
+  if(!isNaN(myNum)){
+    const resultLogTen = (Math.log10(myNum)).toFixed(4);
+    document.querySelector('.js-num1').value = resultLogTen;
+    return;
+
+  }else if(isNaN(myNum)){
+    document.querySelector('.js-num1').value = 'Please Enter base, power';
     return;
   }
-
-  let num1 = parseFloat(numSplit[0].trim());
-  let num2 = parseFloat(numSplit[1].trim());
-
-  if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers separated by a comma';
-    return;
-  }
-
-  if(num1 === 0){
-    document.querySelector('.js-result').value = 'Value running to negative infinity';
-    return;
-  }
-
-  if(num2 === 0){
-    document.querySelector('.js-result').value = 'Error: Division by zero';
-    return;
-  }else if(num1 === num2){
-    let totalNum = Math.log10(num1).toFixed(4);
-    document.querySelector('.js-result').value = `${totalNum}`;
-    return;
-  }else if(num1 !== num2){
-    let totalNum = num1/num2;
-    let logResult = Math.log10(totalNum).toFixed(4);
-    document.querySelector('.js-result').value = `${logResult}`;
-    return;
-  }
+  
 }
 document.querySelector('.js-logarithm').addEventListener('click',()=>{
   logBaseTenCalculation();
 });
 
 
+
 function logBaseTwoCalculation(){
   let num = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  const myNum = parseFloat(num);
+  if(!isNaN(myNum)){
+    const resultLogTwo = (Math.log2(myNum)).toFixed(4);
+    document.querySelector('.js-result').value = resultLogTwo;
+    return;
+  }
+
   let numSplit = num.split(',');
 
   if(numSplit.length !== 2){
@@ -546,9 +478,17 @@ document.querySelector('.js-log2').addEventListener('click',()=>{
 });
 
 
-function lnCalculation(){
-  let firstNum = document.querySelector('.js-num1').value;
+function naturalLogCalculation(){
+  const firstNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  const numConvert = parseFloat(firstNum);
+  if(!isNaN(numConvert)){
+    const lnResult = (Math.log(numConvert)).toFixed(4);
+    document.querySelector('.js-result').value = lnResult;
+    return;
+  }
+
   let numSplit = firstNum.split(',');
 
   if(numSplit.length !== 2){
@@ -556,8 +496,8 @@ function lnCalculation(){
     return;
   }
 
-  let num1 = parseFloat(numSplit[0].trim());
-  let num2 = parseFloat(numSplit[1].trim());
+  const num1 = parseFloat(numSplit[0].trim());
+  const num2 = parseFloat(numSplit[1].trim());
 
   if(isNaN(num1) || isNaN(num2)){
     document.querySelector('.js-result').value = 'Please enter two valid numbers separated by a comma';
@@ -572,19 +512,21 @@ function lnCalculation(){
     document.querySelector('.js-result').value = 'Error: Division by zero';
     return;
   }else if(num1 === num2){
-    let totalNum = Math.LN2(num1).toFixed(4);
+    const equalNum = Math.LN2(num1);
+    const totalNum = equalNum.toFixed(2);
     document.querySelector('.js-result').value = `${totalNum}`;
     return;
   }else if(num1 !== num2){
-    let totalNum = num1/num2;
-    let logResult = Math.LN2(totalNum).toFixed(4);
+    const totalNum = num1/num2;
+    const logResult = Math.LN2(totalNum).toFixed(2);
     document.querySelector('.js-result').value = `${logResult}`;
     return;
   }
 }
-document.querySelector('.js-natural-log').addEventListener('click',()=>{
-  lnCalculation();
+document.querySelector('.js-ln').addEventListener('click',()=>{
+  naturalLogCalculation();
 });
+
 
 
 function sevenNumber(){
@@ -748,9 +690,18 @@ document.querySelector('.js-log-basex-raise-to-y').addEventListener('click',()=>
 });
 
 
+
 function eRaiseToPowerX(){
   let secondNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  const eNum = parseFloat(secondNum);
+  if(!isNaN(eNum)){
+    const eResultNum = (Math.exp(eNum)).toFixed(4);
+    document.querySelector('.js-result').value = eResultNum;
+    return;
+  }
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
@@ -783,9 +734,20 @@ document.querySelector('.js-e-raise-to-power-x').addEventListener('click',()=>{
 });
 
 
+
 function xRaiseToPower3(){
   let secondNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  //Checking for one number.
+  const xNumThree = parseFloat(secondNum);
+  if(!isNaN(xNumThree)){
+    const xNumResult = (xNumThree ** 3).toFixed(0);
+    document.querySelector('.js-result').value = xNumResult;
+    return;
+  }
+
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
@@ -817,9 +779,21 @@ document.querySelector('.js-x-raise-to-power-3').addEventListener('click',()=>{
   xRaiseToPower3();
 });
 
+
+
 function xRaiseToPower2(){
   let secondNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+  //Checking for one number:
+  const xNumTwo = parseFloat(secondNum);
+  if(!isNaN(xNumTwo)){
+    const xNumResult = (xNumTwo ** 2).toFixed(0);
+    document.querySelector('.js-result').value = xNumResult;
+    return;
+  }
+
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
@@ -852,9 +826,21 @@ document.querySelector('.js-x-raise-to-power-2').addEventListener('click',()=>{
 });
 
 
+
 function xRaiseToPowerMinusOne(){
   let secondNum = document.querySelector('.js-num1').value;
-  document.querySelector('.js-num1').value = [];
+  document.querySelector('.js-num1').value = "";
+
+
+  //Checking for one number to calculate:
+  const xMinus = parseFloat(secondNum);
+  if(!isNaN(xMinus)){
+    const xMinusResult = (xMinus ** -1).toFixed(1);
+    document.querySelector('.js-result').value = xMinusResult;
+    return;
+  }
+
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
@@ -887,9 +873,21 @@ document.querySelector('.js-x-raise-to-power-minus-one').addEventListener('click
 });
 
 
+
 function threeSqrtX(){
   let secondNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
+
+
+  //Checking for one number to calculate:
+  const cubeX = parseFloat(secondNum);
+  if(!isNaN(cubeX)){
+    const cubeXresult = (Math.cbrt(cubeX)).toFixed(0);
+    document.querySelector('.js-result').value = cubeXresult;
+    return;
+  }
+
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
     document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
@@ -922,12 +920,13 @@ document.querySelector('.js-three-sqrt-x').addEventListener('click',()=>{
 });
 
 
+
 function xSqrty(){
   let secondNum = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = [];
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+    document.querySelector('.js-result').value = 'Please enter base, power';
     return;
   }
 
@@ -935,19 +934,20 @@ function xSqrty(){
   let num2 = parseFloat(splitNum[1].trim());
 
   if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers separated by a comma';
+    document.querySelector('.js-result').value = 'Please enter base, power';
     return;
   }
 
   if(num2 === 0){
-    document.querySelector('.js-result').value = 'Error: Division by zero';
+    const num2Value = num2 ** (1/num1);
+    document.querySelector('.js-result').value = `${num2Value}`;
     return;
   }else if(num1 === num2){
-    let totalE = Math.pow(num1,1/num2).toFixed(3);
+    let totalE = (Math.pow(num2,1/num1)).toFixed(4);
     document.querySelector('.js-result').value = `${totalE}`;
     return;
   }else if(num1 !== num2){
-    let totalE = (Math.pow(num2,1/num1)).toFixed(3);
+    let totalE = (Math.pow(num2,1/num1)).toFixed(4);
     document.querySelector('.js-result').value = `${totalE}`;
     return;
   }
@@ -959,25 +959,26 @@ document.querySelector('.js-x-sqrt-y').addEventListener('click',()=>{
 
 function modulus(){
   let secondNum = document.querySelector('.js-num1').value;
+
   let splitNum = secondNum.split(',');
   if(splitNum.length !== 2){
-    document.querySelector('.js-result').value = 'Please enter two numbers separated by a comma';
+    document.querySelector('.js-result').value = 'Please enter mod1, mod2';
     return;
   }
 
-  let num1 = parseFloat(splitNum[0].trim());
-  let num2 = parseFloat(splitNum[1].trim());
+  const dividend = parseFloat(splitNum[0].trim());
+  const divisor = parseFloat(splitNum[1].trim());
 
-  if(isNaN(num1) || isNaN(num2)){
-    document.querySelector('.js-result').value = 'Please enter two valid numbers separated by a comma';
+  if(isNaN(dividend) || isNaN(divisor)){
+    document.querySelector('.js-result').value = 'Please enter mod1, mod2';
     return;
   }
 
-  if(num2 === 0){
-    document.querySelector('.js-result').value = 'Error: Division by zero';
+  if(divisor === 0){
+    document.querySelector('.js-result').value = 'Undefined';
     return;
-  }else if(num1 !== num2){
-    let totalE = num1 % num2;
+  }else if(dividend !== divisor){
+    const totalE = dividend % divisor;
     document.querySelector('.js-result').value = `${totalE}`;
     return;
   }

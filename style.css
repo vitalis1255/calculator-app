@@ -74,6 +74,7 @@
   text-align:center;
   color:white;
   margin-bottom:5px;
+  font-size: 20px;
 }
 .label12{
   margin-bottom: 15px;
@@ -89,12 +90,13 @@
 }
 
 .num1{
-  width:300px;
+  width:200px;
   padding:12px;
   border-radius:15px;
   border:none;
   font-size:16px;
   border: none;
+  margin-left: 20px;
 }
 
 .num1::placeholder{
