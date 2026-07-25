@@ -1,6 +1,6 @@
 .container-all{
   background-color: #1D2951;
-  width:500px;
+  width:395px;
   margin:40px auto;
   padding:18px;
   border-radius:25px;
@@ -12,15 +12,29 @@
   color: white;
 }
 #seven-eight-nine{
+  /*
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:10px;
   margin-top:5px;
+  */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
+  margin-top:5px;
 }
 #nums-four-six{
+  /*
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:10px;
+  margin-top:5px;
+  */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
   margin-top:5px;
 }
 .roots-any-num{
@@ -30,29 +44,60 @@
   column-gap: 10px;
 }
 .nums-one-to-three{
+  /*
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:10px;
   margin-top:5px;
+  */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
+  margin-top:5px;
 }
 .nums-zero-to-dot-exp{
+  /*
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:10px;
+  margin-top:5px;
+  */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
   margin-top:5px;
 }
 
 .arithmetic{
+  /*
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   gap:10px;
   margin-top:5px;
+  */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
+  margin-top:5px;
 }
+
 .trigonometry{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:10px;
+  grid-template-columns:repeat(6, minmax(60px, max-content));
+  justify-content: center;
+  column-gap: 4px;
   margin-top:5px;
+  
+  /*
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 10px;
+  */
 }
 
 .head-input{
@@ -202,9 +247,6 @@ input[type="text"]{
 }
 
 .acose{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -213,8 +255,6 @@ input[type="text"]{
 }
 
 .asine{
-  padding-top: 5px;
-  padding-bottom: 5px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -223,9 +263,6 @@ input[type="text"]{
 }
 
 .atane{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -234,9 +271,6 @@ input[type="text"]{
 }
 
 .sin{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -245,9 +279,6 @@ input[type="text"]{
 }
 
 .cos{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -256,9 +287,6 @@ input[type="text"]{
 }
 
 .tan{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -282,10 +310,6 @@ input[type="text"]{
 }
 
 .reset-button{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -295,10 +319,6 @@ input[type="text"]{
 
 .seven{
   margin-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -308,10 +328,6 @@ input[type="text"]{
 
 .eight{
   margin-right: 3px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -320,10 +336,6 @@ input[type="text"]{
 }
 
 .nine{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -331,9 +343,6 @@ input[type="text"]{
   border-radius: 4px;
 }
 .four{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -342,9 +351,6 @@ input[type="text"]{
 }
 
 .five{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -353,9 +359,6 @@ input[type="text"]{
 }
 
 .six{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
   border: 1px solid gray;
   background-color: #1D2951;
   color: lightgray;
@@ -364,13 +367,13 @@ input[type="text"]{
 }
 
 button{
-  width:70px;
+  width:55px;
   height:45px;
   border:none;
   border-radius:8px;
   color:white;
   cursor:pointer;
-  font-size:15px;
+  font-size:10px;
   transition:.3s;
 }
 
