@@ -901,7 +901,7 @@ function signCalculation(){
 
   if(signResult){
     const result = Math.sign(signResult);
-    document.querySelector('.js-num1').value = result;
+    document.querySelector('.js-num1').value = `Is: ${result}`;
     return;
   }
   
