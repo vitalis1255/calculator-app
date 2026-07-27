@@ -887,3 +887,76 @@ function modulus(){
 document.querySelector('.js-module').addEventListener('click',()=>{
   modulus();
 });
+
+
+
+//SIGNUM FUNCTION
+function signCalculation(){
+  //use Math.sign(num) to calculate
+  const sign = document.querySelector('.js-num1').value;
+  document.querySelector('.js-num1').value = " ";
+
+  //CONVERT SIGN TO A REAL NUMBER
+  const signResult = parseFloat(sign);
+
+  if(signResult){
+    const result = Math.sign(signResult);
+    document.querySelector('.js-num1').value = result;
+    return;
+  }
+  
+}
+
+document.querySelector('.js-sgn').addEventListener('click',()=>{
+  signCalculation();
+});
+
+
+
+//ABSOLUTE FUNCTION
+function absoluteFunc(){
+  //use Math.abs(num) for absolute calculation
+  const abs = document.querySelector('.js-num1').value;
+
+  //CONVERT ABS TO A REAL NUMBER
+  const absResult = parseFloat(abs);
+
+  //CHECK IF ABS IS A REAL NUMBER
+  if(absResult){
+    const absoluteValue = Math.abs(absResult);
+    document.querySelector('.js-num1').value = `Is: ${absoluteValue}`;
+    return;
+  }
+
+}
+
+document.querySelector('.js-abs').addEventListener('click',()=>{
+  absoluteFunc();
+});
+
+
+
+//FACTORIAL FUNCTION
+function factorialFunc(){
+  const n = document.querySelector('.js-num1').value;
+  let result = 1;
+
+  //CONVERT N TO A REAL NUMBER
+  if(n){
+    const nValue = parseFloat(n);
+    if(nValue <= 0){
+      document.querySelector('.js-num1').value = undefined;
+     return;
+
+    }else if(nValue > 0){
+      for(let i = 1; i<= nValue; i++){
+        result *=i;
+      }
+    }
+  }
+  document.querySelector('.js-num1').value = `${result}`;
+}
+
+document.querySelector('.js-factorial').addEventListener('click',()=>{
+  factorialFunc();
+});
