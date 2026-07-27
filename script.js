@@ -176,8 +176,8 @@ function sinCalculation(){
   const num = Number(first_num);
   if(num){
     const teta = num * (Math.PI/180);
-    const resultTeta = (Math.sin(teta)).toFixed(4);
-    document.querySelector('.js-num1').value = `${resultTeta} Radians`;
+    const resultTeta = (Math.sin(teta)).toFixed(1);
+    document.querySelector('.js-num1').value = `${resultTeta}`;
     return;
 
   }else if(isNaN(num)){
@@ -204,7 +204,7 @@ function cosCalculation(){
   if(inputNum){
     const teta = inputNum * (Math.PI/180);
     const cosTotal = Math.cos(teta).toFixed(4);
-    document.querySelector('.js-num1').value = `${cosTotal} radians`;
+    document.querySelector('.js-num1').value = `${cosTotal}`;
     return;
 
   }else if(isNaN(inputNum)){
@@ -229,7 +229,7 @@ function tanCalculation(){
   if(tanNum){
     const teta = tanNum * (Math.PI/180);
     const tetaTotalTan = Math.tan(teta).toFixed(4);
-    document.querySelector('.js-num1').value = `${tetaTotalTan} radians`;
+    document.querySelector('.js-num1').value = `${tetaTotalTan}`;
     return;
 
   }else if(isNaN(tanNum)){
@@ -437,7 +437,7 @@ function logBaseTwoCalculation(){
   const myNum = parseFloat(num);
   if(!isNaN(myNum)){
     const resultLogTwo = (Math.log2(myNum)).toFixed(4);
-    document.querySelector('.js-result').value = resultLogTwo;
+    document.querySelector('.js-num1').value = resultLogTwo;
     return;
 
   }else if(isNaN(myNum)){
