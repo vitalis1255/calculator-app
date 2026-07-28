@@ -892,6 +892,7 @@ document.querySelector('.js-module').addEventListener('click',()=>{
 
 //SIGNUM FUNCTION
 function signCalculation(){
+
   //use Math.sign(num) to calculate
   const sign = document.querySelector('.js-num1').value;
   document.querySelector('.js-num1').value = " ";
@@ -903,6 +904,7 @@ function signCalculation(){
     const result = Math.sign(signResult);
     document.querySelector('.js-num1').value = `Is: ${result}`;
     return;
+
   }else if(isNaN(sign)){
     document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
@@ -918,6 +920,7 @@ document.querySelector('.js-sgn').addEventListener('click',()=>{
 
 //ABSOLUTE FUNCTION
 function absoluteFunc(){
+
   //use Math.abs(num) for absolute calculation
   const abs = document.querySelector('.js-num1').value;
 
@@ -929,6 +932,7 @@ function absoluteFunc(){
     const absoluteValue = Math.abs(absResult);
     document.querySelector('.js-num1').value = `Is: ${absoluteValue}`;
     return;
+
   }else if(isNaN(abs)){
     document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
@@ -949,17 +953,20 @@ function factorialFunc(){
 
   //CONVERT N TO A REAL NUMBER
   if(n){
+
     const nValue = parseFloat(n);
+
     if(nValue <= 0){
-      document.querySelector('.js-num1').value = undefined;
+      document.querySelector('.js-num1').value =  undefined;
      return;
 
     }else if(nValue > 0){
       for(let i = 1; i<= nValue; i++){
         result *=i;
-        return;
       }
-    }else if(isNaN(nValue)){
+      document.querySelector('.js-num1').value = result;
+
+    }else if(isNaN(n)){
       document.querySelector('.js-num1').value = 'Please Enter a valid num';
       return;
     }
