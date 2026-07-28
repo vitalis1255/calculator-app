@@ -254,7 +254,7 @@ function asinCalculation(){
   if(!isNaN(myAsinNum)){
     const resultRadians = Math.asin(myAsinNum)
     const resultDegrees = resultRadians * (180/Math.PI);
-    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} Degrees`;
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} deg`;
     return;
 
   }else if(isNaN(myAsinNum)){
@@ -278,7 +278,7 @@ function acosCalculation(){
   if(!isNaN(myCosNum)){
     const resultRadians = Math.acos(myCosNum)
     const resultDegrees = resultRadians * (180/Math.PI);
-    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} Degrees`;
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(0)} deg`;
     return;
 
   }else if(isNaN(myCosNum)){
@@ -302,7 +302,7 @@ function atanCalculation(){
   if(!isNaN(myAtanNum)){
     const resultRadians = Math.atan(myAtanNum)
     const resultDegrees = resultRadians * (180/Math.PI);
-    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(2)} Degrees`;
+    document.querySelector('.js-num1').value = `${resultDegrees.toFixed(2)} deg`;
     return;
 
   }else if(isNaN(myAtanNum)){

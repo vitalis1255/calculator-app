@@ -1,12 +1,16 @@
 .container-all{
   background-color: #1D2951;
-  width:395px;
+  width:380px;
   margin:40px auto;
-  padding:18px;
+  /*padding:18px;*/
+  padding-top: 10px;
+  padding-bottom: 14px;
+  padding-left: 13px;
+  padding-right: 8px;
   border-radius:25px;
   display:flex;
   flex-direction:column;
-  gap:7px;
+  gap:3px;
 }
 .text-one{
   color: white;
@@ -479,7 +483,6 @@ button:active{
   color: lightgray;
   cursor: pointer;
   border-radius: 4px;
-  margin-left: 2px;
 }
 
 .num-zero{
