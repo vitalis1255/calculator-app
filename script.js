@@ -903,6 +903,9 @@ function signCalculation(){
     const result = Math.sign(signResult);
     document.querySelector('.js-num1').value = `Is: ${result}`;
     return;
+  }else if(isNaN(sign)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
+    return;
   }
   
 }
@@ -925,6 +928,9 @@ function absoluteFunc(){
   if(absResult){
     const absoluteValue = Math.abs(absResult);
     document.querySelector('.js-num1').value = `Is: ${absoluteValue}`;
+    return;
+  }else if(isNaN(abs)){
+    document.querySelector('.js-num1').value = 'Please Enter a valid num';
     return;
   }
 
@@ -951,7 +957,11 @@ function factorialFunc(){
     }else if(nValue > 0){
       for(let i = 1; i<= nValue; i++){
         result *=i;
+        return;
       }
+    }else if(isNaN(nValue)){
+      document.querySelector('.js-num1').value = 'Please Enter a valid num';
+      return;
     }
   }
   document.querySelector('.js-num1').value = `${result}`;
