@@ -334,6 +334,7 @@ input[type="text"]{
   color: lightgray;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 15px;
 }
 
 .seven{
