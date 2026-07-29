@@ -176,7 +176,7 @@ function sinCalculation(){
   const num = Number(first_num);
   if(num){
     const teta = num * (Math.PI/180);
-    const resultTeta = (Math.sin(teta)).toFixed(1);
+    const resultTeta = (Math.sin(teta)).toFixed(4);
     document.querySelector('.js-num1').value = `${resultTeta}`;
     return;
 
